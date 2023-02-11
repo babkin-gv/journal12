@@ -20,13 +20,13 @@ public class MainController {
         model.addAttribute("name", name);
         return "greeting";
     }
-    @GetMapping("/main")
+    @GetMapping("/")
     public String main(Model model){
         Iterable<Student> students = studentRepo.findAll();
         model.addAttribute("students", students);
         return "main";
     }
-    @PostMapping("/main")
+    @PostMapping("/")
     public String add(@RequestParam String text,
                       @RequestParam int groupp, Model model){
         final Student student = new Student(text, groupp);
